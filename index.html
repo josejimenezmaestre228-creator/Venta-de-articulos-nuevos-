@@ -1,71 +1,162 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>CompreVenta PRO</title>
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-}
-header {
-  background: #222;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  font-size: 24px;
-}
-#contenedor {
-  width: 95%;
-  max-width: 900px;
-  margin: 20px auto;
-}
-.producto {
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.15);
-  margin-bottom: 20px;
-}
-.producto img {
-  width: 100%;
-  border-radius: 10px;
-}
-button {
-  background: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-button:hover {
-  background: #005bd1;
-}
-#nuevoForm {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  display: none;
-  margin-bottom: 20px;
-}
-input, textarea {
-  width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #aaa;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra Venta Express JJ</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background: linear-gradient(90deg, #ff6f61, #ff856d);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            display: block;
+            font-weight: bold;
+        }
+        nav a:hover {
+            background-color: #575757;
+            transition: 0.3s;
+        }
+        .container {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .product:hover {
+            transform: translateY(-5px);
+        }
+        .product img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+        .product h3 {
+            margin: 15px 0 10px;
+            font-size: 1.3em;
+            color: #333;
+        }
+        .product p {
+            color: #555;
+            line-height: 1.4;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background-color: #ff856d;
+        }
+        .contact {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .contact a {
+            color: #ff6f61;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        @media (max-width: 768px) {
+            header h1 {font-size: 2em;}
+        }
+    </style>
 </head>
 <body>
-<header>CompreVenta PRO</header>
-<div id="contenedor"><button onclick="mostrarFormulario()">Añadir Producto</button>
-
-<div id="nuevoForm">
-  <h2>Nuevo producto</h2>
-  <input type="text" id="titulo" placeholder="Título" />
-  <input type="number" id="precio" placeholder="Precio (€)" />
-  <textarea id="descripcion" placeholder="Descripción"></textarea>
-  <input type="file" id="
+<header>
+    <h1>Compra Venta Express JJ</h1>
+    <p>Electrodomésticos, herramientas y más productos al mejor precio</p>
+</header>
+<nav>
+    <a href="#productos">Productos</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+<div class="container" id="productos">
+    <h2 style="text-align:center; margin-bottom:30px;">Productos Disponibles</h2>
+    <div class="products">
+        <div class="product">
+            <img src="img/xiaomi-e5.jpg" alt="Robot Xiaomi E5">
+            <h3>Robot Xiaomi E5</h3>
+            <p>Robot aspirador inteligente, control por app, batería de larga duración.</p>
+            <p>Precio: 150€</p>
+            <a href="https://wa.me/633314139" class="btn">Comprar / Consultar</a>
+        </div>
+        <div class="product">
+            <img src="img/batidora-mini.jpg" alt="Batidora Mini">
+            <h3>Batidora Mini</h3>
+            <p>Mini batidora de mano, ideal para cocina rápida y saludable.</p>
+            <p>Precio: 30€</p>
+            <a href="https://wa.me/633314139" class="btn">Comprar / Consultar</a>
+        </div>
+        <div class="product">
+            <img src="img/multiherramienta.jpg" alt="Multiherramienta Dremel">
+            <h3>Multiherramienta Dremel</h3>
+            <p>Ideal para bricolaje y manualidades, incluye accesorios básicos.</p>
+            <p>Precio: 107€</p>
+            <a href="https://wa.me/633314139" class="btn">Comprar / Consultar</a>
+        </div>
+        <div class="product">
+            <img src="img/cecotec-powertwist.jpg" alt="Cecotec Batidora Powertwist">
+            <h3>Cecotec Batidora Powertwist 500 Pro</h3>
+            <p>500W, 5 velocidades, función turbo, incluye varillas y ganchos amasadores.</p>
+            <p>Precio: 50€</p>
+            <a href="https://wa.me/633314139" class="btn">Comprar / Consultar</a>
+        </div>
+    </div>
+</div>
+<div class="contact" id="contacto">
+    <h2>Contacto</h2>
+    <p>Para comprar o consultar disponibilidad, contáctanos:</p>
+    <p>WhatsApp: <a href="https://wa.me/633314139">633314139</a></p>
+    <p>Email: <a href="mailto:compraventaexpress@gmail.com">compraventaexpress@gmail.com</a></p>
+</div>
+<footer>
+    <p>&copy; 2025 Compra y Venta Express JJ. Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
